@@ -14,11 +14,11 @@ final class FileJsonCatchableConfigProvider implements ConfigProviderInterface
             return;
         }
 
-        $config = $providerProxy();
+        $this->config = $providerProxy();
 
         // Cache config if enabled
-        if (isset($config['config_cache_enabled']) && $config['config_cache_enabled'] === true) {
-            file_put_contents($filename, json_encode($config));
+        if (isset($this->config['config_cache_enabled']) && $this->config['config_cache_enabled'] === true) {
+            file_put_contents($filename, json_encode($this->config));
         }
     }
 
