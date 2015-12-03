@@ -14,7 +14,13 @@ final class FileJsonCatchableConfigProvider implements ConfigProviderInterface
             return;
         }
 
-        $this->config = $providerProxy();
+        $proxyResult = $providerProxy();
+
+        if (!$proxyResult instanceof ConfigProviderInterface) {
+            throw new RuntimeException(sprintf("Proxy result must be an instance of %s", ConfigProviderInterface::class));
+        }
+
+        $this->config = $proxyResult->getConfig();
 
         // Cache config if enabled
         if (isset($this->config['config_cache_enabled']) && $this->config['config_cache_enabled'] === true) {
