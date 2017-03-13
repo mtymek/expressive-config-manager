@@ -3,7 +3,7 @@ Expressive Configuration Manager
 
 **Deprecated!** This library was merged into Zend Framework organization as [zend-config-aggregator](https://github.com/zendframework/zend-config-aggregator) - please use it instead.
 
-[![Build Status](https://travis-ci.org/mtymek/expressive-config-manager.svg?branch=master)](https://travis-ci.org/mtymek/expressive-config-manager)
+------
 
 Lightweight library for collecting and merging configuration from different sources. 
 
